@@ -34,6 +34,8 @@ Project name (vue-test)直接回车默认
 Project description (A Vue.js project) 直接回车默认
 Author 写你自己的名字
 
+
+
 安装项目依赖
 
 一定要从官方仓库安装，npm 服务器在国外所以这一步安装速度会很慢。
@@ -47,3 +49,27 @@ cnpm install vue-router vue-resource --save
 
 启动项目
 npm run dev
+
+####################
+搭建vue的开发环境
+1.必须安装node.js
+2.搭建vue的开发环境，安装VUE的脚手架工具官方命令行工具
+npm install --global vue-cli   或者cnpm install --global vue-cli
+3.创建项目,必须cd到对应的一个项目目录
+vue init webpack vue-demo01
+cd vue-demon01
+cnpm install   #安装依赖,如果创建项目的时候没有报错，这一布是可以省略的，
+npm run dev   #运行项目
+
+#另一种安装方式，目录会少，简单的方式
+
+vue init webpack-simple vue-demo02
+cd vue-demon02
+cnpm install   #安装依赖,如果创建项目的时候没有报错，这一布是可以省略的，
+npm run dev   #运行项目
+
+
+
+#cnpm 的安装
+npm install -g cnpm --register=https://registry.npm.taobao.org
+
