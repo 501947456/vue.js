@@ -73,3 +73,62 @@ npm run dev   #运行项目
 #cnpm 的安装
 npm install -g cnpm --register=https://registry.npm.taobao.org
 
+#vue-resource使用
+1.安装vue-resource插件
+npm install vue-resource --save
+
+2.使用插件
+在main.js下增加如下内容
+import VueResource from 'vue-resource';
+Vue.use(VueResource)
+3.组件使用vue-resource
+methods:{
+   getData(){
+   var api='http://www.phonegap100.com/appapi.php?a=getPort';
+   this.$http.get(api).then(function(response{
+   console.log(response);
+   },function(err){
+      console.log(err);
+   })
+   
+   官方例子
+   {
+  // GET /someUrl
+  this.$http.get('/someUrl').then(response => {
+
+    // get body data
+    this.someData = response.body;
+
+  }, response => {
+    // error callback
+  });
+}
+
+#父组件给子组件传数据
+1.父组件调用子组件的时侯，绑定动态属性
+<v-header :title="title"  :msg='msg' :run='run'></v-header>
+方法也可以传递过去
+    method:{
+      run(){
+      alert('log')
+      }
+    },
+
+2.在组件里通过props接收父组件传过来的数据
+   <template>
+    <div>
+        <h3>这是一个header组件--{{title}}</h3>
+    </div>
+</template>
+<script>
+export default {
+    data(){
+        return{
+
+        }
+    },
+
+    props:['title','msg','run']  //这里的title还必须要用引号
+}
+</script>
+}
